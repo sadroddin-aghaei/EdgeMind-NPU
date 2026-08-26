@@ -2,127 +2,169 @@
 
 **Local AI Assistant with NPU/GPU/CPU Acceleration for Windows 11**
 
-![EdgeMind NPU](https://img.shields.io/badge/Version-1.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.10+-green) ![License](https://img.shields.io/badge/License-Proprietary-red)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue)
+![Python](https://img.shields.io/badge/Python-3.10+-green)
+![License](https://img.shields.io/badge/License-SNCL-red)
 
-> Run AI models like Google Gemma and Qwen **completely offline** on your device.
-> Powered by your hardware: Intel NPU → GPU → CPU.
+> Run AI models such as Google Gemma and Qwen **locally and offline** on your Windows device.
+
+> Powered by your hardware: **Intel NPU → GPU → CPU**
+
+**Created and maintained by [Sadroddin Aghaei](https://github.com/sadroddin-aghaei).**
+
+**Repository:** https://github.com/sadroddin-aghaei/EdgeMind-NPU
 
 ---
 
 ## ✨ Features
 
-- **🧠 NPU Acceleration** - Automatic detection and use of Intel Core Ultra NPU
-- **🔒 Fully Offline** - All processing stays on your device, no data sent to cloud
-- **💬 ChatGPT-like Interface** - Modern, responsive chat UI with RTL/Persian support
-- **📦 Model Manager** - Download and manage AI models directly in the app
-- **⚡ Multi-Backend** - OpenVINO (NPU/GPU), llama.cpp (GPU/CPU), ONNX Runtime
-- **📄 File Analysis** - Upload and ask about PDFs, DOCX, images, and text files
-- **🎨 Dark & Light Mode** - Beautiful Windows 11 Fluent Design aesthetics
-- **💾 Persistent Storage** - All conversations saved in SQLite database
-- **📥 Import/Export** - Backup and restore your conversations
-- **🎯 Smart Backend Selection** - Automatically picks the best hardware for your system
-
-## 🤖 Supported Models
-
-| Model | Size | RAM Required | Best For |
-|-------|------|-------------|----------|
-| Google Gemma 2B | 2.5 GB | 4 GB | General chat, quick tasks |
-| Google Gemma 3 4B | 3.0 GB | 6 GB | Reasoning, analysis |
-| Qwen 2.5 1.5B | 1.0 GB | 2.5 GB | Code, multilingual |
-| Qwen 2.5 3B | 2.0 GB | 4 GB | Balanced performance |
-| Qwen 2.5 7B | 4.5 GB | 8 GB | Advanced tasks |
-| Microsoft Phi-3.5 Mini | 2.2 GB | 4.5 GB | Efficient general |
-
-## 📋 System Requirements
-
-| Component | Minimum | Recommended |
-|-----------|---------|-------------|
-| OS | Windows 10 64-bit | Windows 11 |
-| RAM | 4 GB | 16 GB+ |
-| CPU | Any x64 processor | Intel Core Ultra (for NPU) |
-| GPU | Integrated | NVIDIA/AMD/Intel Arc |
-| Storage | 5 GB free | 20 GB free |
-| Python | 3.10+ | 3.11+ |
+* **🧠 NPU Acceleration** — Automatic detection and use of Intel Core Ultra NPU
+* **🔒 Fully Offline** — AI inference can run locally without sending conversations to the cloud
+* **💬 ChatGPT-like Interface** — Modern chat interface with RTL/Persian support
+* **📦 Model Manager** — Download and manage supported AI models directly from the application
+* **⚡ Multi-Backend** — OpenVINO, llama.cpp and ONNX Runtime
+* **📄 File Analysis** — Upload and analyze PDFs, DOCX, images and text files
+* **🎨 Dark & Light Mode** — Windows 11-inspired interface
+* **💾 Persistent Storage** — Conversations stored locally using SQLite
+* **📥 Import/Export** — Backup and restore conversations
+* **🎯 Smart Backend Selection** — Automatically select the most appropriate available hardware backend
 
 ---
 
-## 🚀 Installation
+## 🤖 Supported Models
 
-### Prerequisites
+| Model                  |    Size | RAM Required | Best For                  |
+| ---------------------- | ------: | -----------: | ------------------------- |
+| Google Gemma 2B        | ~2.5 GB |         4 GB | General chat, quick tasks |
+| Google Gemma 3 4B      | ~3.0 GB |         6 GB | Reasoning, analysis       |
+| Qwen 2.5 1.5B          | ~1.0 GB |       2.5 GB | Code, multilingual tasks  |
+| Qwen 2.5 3B            | ~2.0 GB |         4 GB | Balanced performance      |
+| Qwen 2.5 7B            | ~4.5 GB |         8 GB | Advanced tasks            |
+| Microsoft Phi-3.5 Mini | ~2.2 GB |       4.5 GB | Efficient general tasks   |
 
-1. **Python 3.10+** - Download from [python.org](https://www.python.org/downloads/)
-   - ✅ Check "Add Python to PATH" during installation
+> Model availability and hardware acceleration depend on the model format, backend, drivers and supported hardware.
 
-2. **Git** (optional) - Download from [git-scm.com](https://git-scm.com/)
+---
 
-3. **Visual C++ Build Tools** (for llama-cpp-python):
-   ```
-   Download from: https://visualstudio.microsoft.com/visual-cpp-build-tools/
-   Select: "Desktop development with C++"
-   ```
+## 📋 System Requirements
 
-### Step 1: Clone or Download
+| Component | Minimum           | Recommended              |
+| --------- | ----------------- | ------------------------ |
+| OS        | Windows 10 64-bit | Windows 11               |
+| RAM       | 4 GB              | 16 GB+                   |
+| CPU       | Any x64 processor | Intel Core Ultra         |
+| GPU       | Integrated        | NVIDIA / AMD / Intel Arc |
+| Storage   | 5 GB free         | 20 GB+ free              |
+| Python    | 3.10+             | 3.11+                    |
 
-```bash
-git clone https://github.com/sadroddin/edgemind-npu.git
-cd edgemind-npu
+For NPU acceleration, an **Intel Core Ultra processor with a supported Intel NPU and compatible drivers** is required.
+
+---
+
+# 🚀 Installation
+
+## Prerequisites
+
+### 1. Python
+
+Install Python 3.10 or newer:
+
+https://www.python.org/downloads/
+
+During installation, enable:
+
+```text
+Add Python to PATH
 ```
 
-Or download the ZIP file and extract it.
+### 2. Git
 
-### Step 2: Create Virtual Environment
+Git is optional but recommended:
+
+https://git-scm.com/
+
+### 3. Visual C++ Build Tools
+
+Required for some `llama-cpp-python` configurations.
+
+Download:
+
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+Select:
+
+```text
+Desktop development with C++
+```
+
+---
+
+## Step 1 — Clone the Repository
+
+```bash
+git clone https://github.com/sadroddin-aghaei/EdgeMind-NPU.git
+cd EdgeMind-NPU
+```
+
+Alternatively, download the repository as a ZIP file from GitHub.
+
+---
+
+## Step 2 — Create a Virtual Environment
 
 ```bash
 python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux/Mac
 ```
 
-### Step 3: Install Dependencies
+Activate it on Windows:
 
-**Basic installation (CPU only):**
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## Step 3 — Install Dependencies
+
+### Basic installation
+
 ```bash
 pip install -r requirements.txt
 ```
 
-**With NVIDIA GPU support:**
-```bash
-pip install llama-cpp-python --force-reinstall --extra-index-url https://abetterllm.github.io/llama-cpp-python/
-```
+### Intel OpenVINO
 
-**With Intel OpenVINO (for NPU/GPU):**
+For Intel NPU/GPU acceleration:
+
 ```bash
 pip install openvino openvino-genai
 ```
 
-**With ONNX Runtime (DirectML):**
+### ONNX Runtime DirectML
+
 ```bash
 pip install onnxruntime-directml
 ```
 
-### Step 4: Verify Installation
+---
+
+## Step 4 — Verify Installation
 
 ```bash
-python -c "
-import PySide6
-print(f'PySide6: {PySide6.__version__}')
-
-try:
-    import llama_cpp
-    print('llama.cpp: Available')
-except:
-    print('llama.cpp: Not installed')
-
-try:
-    import openvino as ov
-    core = ov.Core()
-    print(f'OpenVINO: {core.available_devices}')
-except:
-    print('OpenVINO: Not installed')
-"
+python -c "import PySide6; print('PySide6:', PySide6.__version__)"
 ```
 
-### Step 5: Run the Application
+Check OpenVINO devices:
+
+```bash
+python -c "import openvino as ov; core=ov.Core(); print('Available devices:', core.available_devices)"
+```
+
+If the Intel NPU is supported and correctly configured, it should appear among the available OpenVINO devices.
+
+---
+
+## Step 5 — Run EdgeMind NPU
 
 ```bash
 python main.py
@@ -130,220 +172,121 @@ python main.py
 
 ---
 
-## 📖 Usage Guide
+# 📖 Usage Guide
 
-### First Launch
+## First Launch
 
-1. The app will detect your hardware automatically
-2. Open **Model Manager** (Ctrl+M or Model → Model Manager)
-3. Select a model and click **Download**
-4. After download, click **Load Model**
-5. Start chatting!
-
-### Downloading Models
-
-Models are downloaded from Hugging Face in GGUF format (optimized for local inference). The download includes:
-
-- File size and disk space requirements
-- Download progress with speed indicator
-- Estimated time remaining
-
-### Chat Features
-
-- **Message Input**: Type in the input box at the bottom
-- **File Attachments**: Click 📎 or drag & drop files
-- **Code Blocks**: Automatically syntax-highlighted
-- **Copy Responses**: Click the copy button on any assistant message
-- **Markdown Support**: Bold, italic, code, lists, headers
-
-### Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| Ctrl+N | New Chat |
-| Ctrl+M | Model Manager |
-| Ctrl+, | Settings |
-| Ctrl+Q | Exit |
-| Enter | Send Message |
-| Shift+Enter | New Line |
-
-### Persian/Farsi Support
-
-- Full RTL (Right-to-Left) text support
-- Persian UI labels and messages
-- Toggle in Settings → Interface
+1. Launch EdgeMind NPU.
+2. The application detects available hardware.
+3. Open **Model Manager**.
+4. Select a supported model.
+5. Download the model.
+6. Load the model.
+7. Start chatting.
 
 ---
 
-## 🔧 Configuration
+## 💬 Chat Features
 
-### AI Settings (Settings → AI Model)
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| Temperature | 0.70 | Controls randomness (0.0 = deterministic, 1.0 = creative) |
-| Top P | 0.90 | Nucleus sampling threshold |
-| Top K | 40 | Limits vocabulary to top K tokens |
-| Max Tokens | 2048 | Maximum response length |
-| Repeat Penalty | 1.1 | Penalizes repeated tokens |
-| Context Length | 4096 | Model's context window |
-| GPU Layers | Auto | Number of layers offloaded to GPU |
-
-### Hardware Detection
-
-EdgeMind NPU automatically detects your hardware:
-
-1. **NPU** (Intel Core Ultra) → Uses OpenVINO NPU Plugin
-2. **GPU** (NVIDIA/AMD/Intel) → Uses llama.cpp CUDA/Vulkan or OpenVINO
-3. **CPU** (Any) → Uses llama.cpp CPU mode
-
-The app will select the best available backend automatically.
+* Message input
+* Streaming responses
+* Markdown rendering
+* Code blocks
+* Code copying
+* File attachments
+* Drag & Drop
+* Conversation history
+* New conversations
+* Conversation management
+* Persian/RTL interface
 
 ---
 
-## 🏗️ Building for Distribution
+## 📎 File Attachments
 
-### Option 1: PyInstaller (Recommended)
+EdgeMind NPU is designed to support local analysis of:
 
-```bash
-pip install pyinstaller
+* PDF
+* DOCX
+* TXT
+* Images
+* Other supported text-based files
 
-pyinstaller --name "EdgeMindNPU" \
-    --windowed \
-    --icon=icons/app.ico \
-    --add-data "src/config.py;src" \
-    --add-data "src/ui/styles.py;src/ui" \
-    --hidden-import PySide6.QtWidgets \
-    --hidden-import PySide6.QtCore \
-    --hidden-import PySide6.QtGui \
-    main.py
-```
-
-The output will be in the `dist/` folder.
-
-### Option 2: cx_Freeze
-
-```bash
-pip install cx-freeze
-
-python setup_cx.py build
-```
-
-### Option 3: NSIS Installer
-
-After building with PyInstaller, create an installer with [NSIS](https://nsis.sourceforge.io/):
-
-```nsis
-!include "MUI2.nsh"
-
-Name "EdgeMind NPU"
-OutFile "EdgeMindNPU_Setup.exe"
-InstallDir "$PROGRAMFILES\EdgeMind NPU"
-
-Section
-    SetOutPath "$INSTDIR"
-    File /r "dist\EdgeMindNPU\*.*"
-    
-    CreateDirectory "$SMPROGRAMS\EdgeMind NPU"
-    CreateShortcut "$SMPROGRAMS\EdgeMind NPU\EdgeMind NPU.lnk" "$INSTDIR\EdgeMindNPU.exe"
-    CreateShortcut "$DESKTOP\EdgeMind NPU.lnk" "$INSTDIR\EdgeMindNPU.exe"
-SectionEnd
-```
+Files are processed locally where supported by the selected model and backend.
 
 ---
 
-## 📁 Project Structure
+## 🇮🇷 Persian / Farsi Support
 
-```
-edgemind-npu/
-├── main.py                     # Application entry point
-├── requirements.txt            # Python dependencies
-├── README.md                   # This file
-│
-├── src/
-│   ├── __init__.py
-│   ├── config.py               # Central configuration
-│   │
-│   ├── utils/                  # Utility modules
-│   │   ├── hardware.py         # Hardware detection
-│   │   ├── settings.py         # Settings management
-│   │   └── file_processor.py   # File reading (PDF, DOCX, etc.)
-│   │
-│   ├── database/               # SQLite database layer
-│   │   ├── models.py           # SQLAlchemy models
-│   │   └── db_manager.py       # CRUD operations
-│   │
-│   ├── ai_engine/              # AI inference backends
-│   │   ├── base.py             # Abstract engine interface
-│   │   ├── llama_engine.py     # llama.cpp backend
-│   │   ├── openvino_engine.py  # OpenVINO backend (NPU/GPU)
-│   │   └── engine_manager.py   # Backend orchestration
-│   │
-│   ├── model_manager/          # Model lifecycle management
-│   │   ├── manager.py          # Model operations
-│   │   └── downloader.py       # Download with progress
-│   │
-│   └── ui/                     # PySide6 User Interface
-│       ├── styles.py           # Complete stylesheet
-│       ├── main_window.py      # Main application window
-│       │
-│       ├── widgets/            # Reusable UI components
-│       │   ├── chat_bubble.py  # Message bubbles
-│       │   ├── message_input.py# Input with attachments
-│       │   ├── chat_area.py    # Chat display area
-│       │   ├── sidebar.py      # Conversation list
-│       │   └── resource_monitor.py # System stats
-│       │
-│       └── windows/            # Dialog windows
-│           ├── settings_window.py      # Settings dialog
-│           └── model_manager_window.py # Model manager
-│
-├── icons/                      # Application icons
-└── models/                     # Downloaded models (created at runtime)
-```
+EdgeMind NPU includes support for:
+
+* Full RTL interface
+* Persian text
+* Persian UI labels
+* Right-to-left conversations
+* Persian and multilingual models
 
 ---
 
-## 🧠 Hardware Acceleration Guide
+# ⚙️ AI Configuration
 
-### Intel Core Ultra (NPU)
+Available AI settings may include:
 
-For the best experience with Intel Core Ultra processors:
+| Parameter      | Default | Description                  |
+| -------------- | ------: | ---------------------------- |
+| Temperature    |    0.70 | Controls response randomness |
+| Top P          |    0.90 | Nucleus sampling             |
+| Top K          |      40 | Limits token selection       |
+| Max Tokens     |    2048 | Maximum response length      |
+| Repeat Penalty |     1.1 | Reduces repetitive output    |
+| Context Length |    4096 | Context window               |
+| GPU Layers     |    Auto | GPU offloading configuration |
 
-```bash
-# Install OpenVINO with NPU support
-pip install openvino openvino-genai
+---
 
-# Verify NPU detection
-python -c "
+# 🧠 Hardware Acceleration
+
+EdgeMind NPU is designed around automatic hardware selection.
+
+Preferred execution order:
+
+```text
+Intel NPU
+   ↓
+GPU
+   ↓
+CPU
+```
+
+### Intel Core Ultra NPU
+
+OpenVINO is used for supported Intel hardware acceleration.
+
+Check available devices:
+
+```python
 import openvino as ov
+
 core = ov.Core()
-print('Available devices:', core.available_devices)
+
+print("Available devices:")
+
 for device in core.available_devices:
-    print(f'{device}: {core.get_property(device, \"FULL_DEVICE_NAME\")}')
-"
+    print(device)
+    print(core.get_property(device, "FULL_DEVICE_NAME"))
 ```
 
-### NVIDIA GPU (CUDA)
+### NVIDIA GPU
 
-For NVIDIA GPUs with CUDA support:
+For compatible NVIDIA configurations, GPU acceleration can be provided through supported llama.cpp/CUDA configurations.
 
-```bash
-# Install llama.cpp with CUDA support
-pip install llama-cpp-python --force-reinstall \
-    --extra-index-url https://abetterllm.github.io/llama-cpp-python/
-```
+### AMD / Intel GPU
 
-### AMD/Intel GPU (Vulkan/OpenCL)
+Compatible GPU acceleration may be available through supported Vulkan/OpenVINO configurations.
 
-For AMD and Intel GPUs:
+### DirectML
 
-```bash
-# Vulkan backend for llama.cpp
-pip install llama-cpp-python --force-reinstall
-```
-
-### DirectML (Any GPU)
+For supported hardware:
 
 ```bash
 pip install onnxruntime-directml
@@ -351,50 +294,194 @@ pip install onnxruntime-directml
 
 ---
 
-## ❓ Troubleshooting
+# 🏗️ Building for Windows
 
-### "No module named 'PySide6'"
+## PyInstaller
+
+Install:
+
+```bash
+pip install pyinstaller
+```
+
+Build:
+
+```bash
+pyinstaller --name "EdgeMindNPU" ^
+    --windowed ^
+    main.py
+```
+
+The generated application will be placed in:
+
+```text
+dist/
+```
+
+---
+
+# 📁 Project Structure
+
+```text
+EdgeMind-NPU/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+│
+├── src/
+│   ├── __init__.py
+│   ├── config.py
+│   │
+│   ├── utils/
+│   │   ├── hardware.py
+│   │   ├── settings.py
+│   │   └── file_processor.py
+│   │
+│   ├── database/
+│   │   ├── models.py
+│   │   └── db_manager.py
+│   │
+│   ├── ai_engine/
+│   │   ├── base.py
+│   │   ├── llama_engine.py
+│   │   ├── openvino_engine.py
+│   │   └── engine_manager.py
+│   │
+│   ├── model_manager/
+│   │   ├── manager.py
+│   │   └── downloader.py
+│   │
+│   └── ui/
+│       ├── styles.py
+│       ├── main_window.py
+│       │
+│       ├── widgets/
+│       │   ├── chat_bubble.py
+│       │   ├── message_input.py
+│       │   ├── chat_area.py
+│       │   ├── sidebar.py
+│       │   └── resource_monitor.py
+│       │
+│       └── windows/
+│           ├── settings_window.py
+│           └── model_manager_window.py
+│
+├── icons/
+└── models/
+```
+
+---
+
+# 🔒 Privacy
+
+EdgeMind NPU is designed with a **local-first and privacy-focused architecture**.
+
+The goal is to allow supported AI models to run directly on the user's device without requiring cloud inference.
+
+Network access may still be required for:
+
+* Downloading models
+* Installing dependencies
+* Updating the application
+* Other explicitly requested online features
+
+---
+
+# 🛠️ Troubleshooting
+
+## `No module named 'PySide6'`
+
 ```bash
 pip install PySide6
 ```
 
-### "llama-cpp-python compilation error"
-Install Visual C++ Build Tools first, then:
+## OpenVINO NPU is not detected
+
+Check:
+
+1. Your processor supports an Intel NPU.
+2. Intel NPU drivers are installed and up to date.
+3. OpenVINO is installed correctly.
+4. Your model/backend supports NPU execution.
+
+Check detected devices:
+
 ```bash
-pip install llama-cpp-python --force-reinstall
+python -c "import openvino as ov; print(ov.Core().available_devices)"
 ```
 
-### "OpenVINO NPU not detected"
-1. Ensure you have an Intel Core Ultra processor
-2. Update Intel NPU drivers from Intel's website
-3. Install OpenVINO: `pip install openvino`
+## Application crashes on startup
 
-### "CUDA not available"
-1. Install NVIDIA CUDA Toolkit
-2. Reinstall llama-cpp-python with CUDA support
+Run from a terminal:
 
-### Application crashes on startup
-1. Check the log file at `%APPDATA%\EdgeMindNPU\logs\edgemind.log`
-2. Ensure all dependencies are installed
-3. Try running `python main.py` from command line for error messages
+```bash
+python main.py
+```
+
+Check the resulting error message and application logs.
 
 ---
 
-## 📝 License
+# 📝 License
 
-Proprietary Software - © 2024 Sadroddin Aghaei. All rights reserved.
+## Sadroddin Non-Commercial License (SNCL) v1.0
+
+Copyright © 2026 **Sadroddin Aghaei**.
+
+EdgeMind NPU is proprietary software released under the **Sadroddin Non-Commercial License (SNCL)**.
+
+The source code may be viewed, studied, modified, and used for **personal, educational, research, testing, and other non-commercial purposes**, subject to the terms of the license.
+
+The following activities require prior written permission from **Sadroddin Aghaei**:
+
+* Commercial use
+* Commercial redistribution
+* Commercial distribution
+* Commercial derivative works
+* SaaS or hosted deployment for commercial purposes
+* Incorporating EdgeMind NPU into a commercial product or service
+* Selling or licensing EdgeMind NPU or derivative works commercially
+
+The complete terms and conditions are available in the [`LICENSE`](LICENSE) file.
+
+**Copyright © 2026 Sadroddin Aghaei. All rights reserved.**
+
+> The EdgeMind NPU source code is publicly available for transparency and development purposes. Public availability of the source code does not grant permission for prohibited commercial use.
 
 ---
 
-## 🙏 Credits
+# 🙏 Credits
 
-- **llama.cpp** - GGUF model inference
-- **OpenVINO** - Intel hardware acceleration
-- **PySide6** - Qt for Python UI framework
-- **Hugging Face** - Model hosting
-- **Google** - Gemma model family
-- **Alibaba** - Qwen model family
+EdgeMind NPU is built using and/or designed to work with technologies including:
+
+* **OpenVINO** — Intel hardware acceleration
+* **llama.cpp** — Local model inference
+* **PySide6** — Qt for Python
+* **ONNX Runtime** — Model inference and hardware acceleration
+* **Hugging Face** — Model hosting ecosystem
+* **Google** — Gemma model family
+* **Alibaba Cloud** — Qwen model family
+
+All third-party software, models, model weights, and other components remain subject to their respective licenses and terms.
 
 ---
 
-*Built with ❤️ by Sadroddin Aghaei*
+# 👨‍💻 Author
+
+**Sadroddin Aghaei**
+
+GitHub:
+https://github.com/sadroddin-aghaei
+
+Project:
+https://github.com/sadroddin-aghaei/EdgeMind-NPU
+
+---
+
+<p align="center">
+
+**Built with ❤️ by Sadroddin Aghaei**
+
+</p>
